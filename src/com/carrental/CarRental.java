@@ -67,11 +67,15 @@ public class CarRental {
 	public void exploreCars(String[] cars) {
 		int rnd1 = new Random().nextInt(cars.length);
 		int rnd2 = new Random().nextInt(cars.length);
+		int secondRandomNumber = rnd2;
+		while(rnd1 == secondRandomNumber) {
+			secondRandomNumber = new Random().nextInt(cars.length);
+		}
 		System.out.println("Select any car");
 		System.out.println("1. " + cars[rnd1]);
-		System.out.println("2. " + cars[rnd2]);
+		System.out.println("2. " + cars[secondRandomNumber]);
 		carOptions[0] = cars[rnd1];
-		carOptions[1] = cars[rnd2];
+		carOptions[1] = cars[secondRandomNumber];
 	}
 
 	public String fetchCarBySelectedOption(int carOption) {
