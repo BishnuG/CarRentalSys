@@ -96,32 +96,7 @@ public class CarRental {
 		return selectedCar;
 	}
 
-//	public int finalPriceBilling(String[] cars, int[] rates, int carOption) {
-//		int selectedIndex = 0;
-//		String selectedCar = fetchCarBySelectedOption(carOption);
-//		for (int i = 0; i < cars.length; i++) {
-//			if (selectedCar.equalsIgnoreCase(cars[i])) {
-//				selectedIndex = i;
-//				break;
-//			}
-//		}
-//
-//		int selectedCarRate = rates[selectedIndex];
-//		String pickUpDate = getPickUpDate();
-//		String dropOffDate = getPickUpDate();
-//
-//		LocalDate pickDate = LocalDate.parse(pickUpDate);
-//		LocalDate dropDate = LocalDate.parse(dropOffDate);
-//
-//		long noOfDaysBetween = ChronoUnit.DAYS.between(pickDate, dropDate);
-//		int days = (int) noOfDaysBetween;
-//		int finalPrice = days * 250 * selectedCarRate;
-//		finalPrice = finalPrice + (finalPrice * 5) / 100;
-//		//Integer.toString(finalPrice);
-//		return finalPrice;
-//	}
-	
-	public void finalPriceBilling(String[] cars, int[] rates, int carOption) {
+	public String finalPriceBillingTest(String[] cars, int[] rates, int carOption) {
 		int selectedIndex = 0;
 		String selectedCar = fetchCarBySelectedOption(carOption);
 		for (int i = 0; i < cars.length; i++) {
@@ -142,21 +117,7 @@ public class CarRental {
 		int days = (int) noOfDaysBetween;
 		int finalPrice = days * 250 * selectedCarRate;
 		finalPrice = finalPrice + (finalPrice * 5) / 100;
-//		System.out.println("pickUpDate: " +pickUpDate);
-//		System.out.println("dropOffDate: " +dropOffDate);
-//		System.out.println("selectedCarRate: " +selectedCarRate);
-//		System.out.println("noOfDaysBetween: " +noOfDaysBetween);
-//		System.out.println("finalPrice: " +finalPrice);
-		
-		System.out.println("*** Booking Details ***");
-		System.out.println("Pick up location: " + getPickUpLocation());
-		System.out.println("Drop off location: " + getDropOffLocation());
-		System.out.println("Pick up date: " + pickUpDate);
-		System.out.println("Drop off date: " + getDropOffDate());
-		System.out.println("Pick up time: " + getPickUpTime());
-		System.out.println("Car: " + selectedCar);
-		System.out.println("Final billing price: " + finalPrice);
-		
+		return Integer.toString(finalPrice);
 	}
 
 	public String getPickUpLocation() {
@@ -175,14 +136,14 @@ public class CarRental {
 		this.dropOffLocation = dropOffLocation;
 	}
 
-//	public void bookingDetails(String[] bookingDetails) {
-//		System.out.println("*** Booking Details ***");
-//		System.out.println("Pick up location: " + bookingDetails[0]);
-//		System.out.println("Drop off location: " + bookingDetails[1]);
-//		System.out.println("Pick up date: " + bookingDetails[2]);
-//		System.out.println("Pick up time: " + bookingDetails[3]);
-//		System.out.println("Car: " + selectedCar);
-//		System.out.println("Final billing price: " + bookingDetails[5]);
-//	}
+	public void bookingDetails(String[] bookingDetails) {
+		System.out.println("*** Booking Details ***");
+		System.out.println("Pick up location: " + bookingDetails[0]);
+		System.out.println("Drop off location: " + bookingDetails[1]);
+		System.out.println("Pick up date: " + bookingDetails[2]);
+		System.out.println("Pick up time: " + bookingDetails[3]);
+		System.out.println("Car: " + bookingDetails[4]);
+		System.out.println("Final billing price: " + bookingDetails[5]);
+	}
 
 }
